@@ -4,6 +4,7 @@
     representing the Pascal’s triangle of n:
 """
 
+
 def pascal_triangle(n):
     """ Pascal Triangle function """
     # expect error value
