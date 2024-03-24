@@ -1,20 +1,23 @@
 #!/usr/bin/python3
 """Minimum operation using dynamic programming"""
 
+
 def minOperations(n):
     """
     returns the min number of time to copy and paste to have
     n H string
     """
-    if n == 1:
+    if n <= 0:
         return 0
-    
-    dp = [0] * (n + 1)
-    for i in range (2, n + 1):
-        dp[i] = i # worst case
 
-        for j in range(2, int(i**0.5) + 1):
-            if i % j == 0:
-                dp[i] = min(dp[i], dp[j] + dp[i // j])
+    operations = 0
+    current = 1  # current number of H characters in the file
+    copied = 0   # number of characters copied
 
-    return dp[n]
+    while current < n:
+        if n % current == 0:
+            copied = current
+        current += copied
+        operations += 1
+
+    return operations
