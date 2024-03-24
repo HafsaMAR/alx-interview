@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Minimum operation using dynamic programming"""
+"""Minimum operation using greedy approach"""
 
 
 def minOperations(n):
