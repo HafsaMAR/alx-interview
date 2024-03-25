@@ -4,20 +4,12 @@
 
 def minOperations(n):
     """
-    returns the min number of time to copy and paste to have
-    n H string
+
+    :param n:
+    :return:
     """
-    if n <= 0:
+    if n <= 1:
         return 0
-
-    operations = 0
-    current = 1  # current number of H characters in the file
-    copied = 0   # number of characters copied
-
-    while current < n:
-        if n % current == 0:
-            copied = current
-        current += copied
-        operations += 1
-
-    return operations
+    for op in range(2, n+1):
+        if n % op == 0:
+            return minOperations(int(n/op)) + op
