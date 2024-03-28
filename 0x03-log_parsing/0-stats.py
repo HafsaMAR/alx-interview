@@ -15,7 +15,7 @@ try:
     for line in sys.stdin:
         # split each line using spaces
         line_list = line.split(" ")
-        if len(line_list) == 7:
+        if len(line_list) > 4:
             code = line_list[-2]
             file_size = int(line_list[-1])
             if code in status_code_dict.keys():
